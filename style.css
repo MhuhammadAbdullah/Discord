@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #242B99;
+    background-color: #06073C;
     overflow-x: hidden;
 }
 
@@ -32,11 +32,14 @@ ul {
     gap: 20px;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: 600;
-    color: white;
-    cursor: pointer;
-
 }
-
+.link-container1 ul li a{
+    text-decoration: none;
+    color: white;
+}
+.link-container1 ul li a:hover{
+    text-decoration: 2px solid underline;
+}
 .button {
     background: white;
     color: black;
@@ -48,12 +51,134 @@ ul {
     cursor: pointer;
 
 }
+.star{
+    display: flex;
+    justify-content: end;
+
+}
+.star img{
+    width: 50px;
+    height: 50px;
+}
+.crown {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+.crown img{
+    width: 100px;
+    height: 100px;
+    margin-right: 150px;
+    margin-top: 40px;
+    gap: 30px;
+}
+.crown.turnip{
+    width: 80px;
+    height: 100px;
+
+}
+.thumb{
+    display: flex;
+    margin-left: 80px;
+}
+.thumb img{
+    width: 100px;
+    height: 100px;
+}
+/* Animation for the first crown image */
+@keyframes floatRotate1 {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    25% {
+        transform: translateY(-10px) rotate(-10deg);
+    }
+    50% {
+        transform: translateY(0) rotate(0deg);
+    }
+    75% {
+        transform: translateY(10px) rotate(10deg);
+    }
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+}
+
+/* Animation for the second crown image */
+@keyframes floatRotate2 {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    25% {
+        transform: translateY(-15px) rotate(10deg);
+    }
+    50% {
+        transform: translateY(0) rotate(0deg);
+    }
+    75% {
+        transform: translateY(15px) rotate(-10deg);
+    }
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+}
+
+/* Animation for the third crown image */
+@keyframes floatRotate3 {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    25% {
+        transform: translateY(-5px) rotate(-15deg);
+    }
+    50% {
+        transform: translateY(0) rotate(0deg);
+    }
+    75% {
+        transform: translateY(5px) rotate(15deg);
+    }
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+}
+
+/* Animation for the thumb image */
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Applying the animation to the thumb image */
+.thumb img {
+    animation: rotate 10s linear infinite;
+}
+
+/* Applying animations to the images in the crown and thumb sections */
+.crown img:nth-child(1) {
+    animation: floatRotate1 6s ease-in-out infinite;
+}
+
+.crown img:nth-child(2) {
+    animation: floatRotate2 5s ease-in-out infinite;
+}
+
+.crown img:nth-child(3) {
+    animation: floatRotate3 7s ease-in-out infinite;
+}
+
+.thumb img {
+    animation: rotate 10s linear infinite;
+}
 
 .main {
     display: flex;
     justify-content: center;
     gap: 100px;
-    margin-top: 20px;
+    margin-top: -180px;
 }
 
 .text-image-container {
@@ -79,7 +204,34 @@ img {
     width: 736px;
     height: 480;
 }
+.clyde{
+    width: 70px;
+    height: 70px;
+    display: inline;
+    justify-content: center;
+    padding-bottom: 30px;
+}
+@keyframes clydeAnimation {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(20px); /* Moves the element down */
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
 
+/* Apply the animation */
+.clyde {
+    animation: clydeAnimation 5s ease-in-out infinite;
+}
+
+.content {
+    height: 20px; /* Ensures enough content for scrolling */
+    background: #1C1C1C;
+}
 .button-container {
     display: flex;
     justify-content: center;
@@ -131,16 +283,17 @@ img {
 .first-glass-box {
     width: 80%;
     height: 550px;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.3));
     border-radius: 40px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 20px;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     border: 3px solid rgba(255, 255, 255, 0.18);
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    z-index: 1;
 }
 
 .video video {
@@ -188,7 +341,7 @@ img {
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    margin-top: 180px;
+    margin-top: 100px;
 }
 .text2 {
     display: flex;
@@ -285,6 +438,89 @@ img {
     color: white;
 }
 
+.first-glass-box2 {
+    width: 80%;
+    height: 550px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 3px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    margin: 100px auto; /* Add margin for spacing */
+    z-index: 1;
+}
+.frying{
+    display: flex;
+    
+}
+.frying img{
+    width: 250px;
+    height: 250px;
+    margin-top: -300px;
+    margin-left: 800px;
+}
+@keyframes fryingAnimation {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(200px); /* Moves the element down */
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Apply the animation */
+.frying {
+    animation: cubeAnimation 20s ease-in-out infinite;
+}
+
+.content {
+    height: 2000px; /* Ensures enough content for scrolling */
+    background: #1C1C1C;
+}
+.cube {
+    position: -webkit-sticky; /* For Safari */
+    position: sticky;
+    top: 50px; /* Adjust based on your layout */
+    /* z-index: 10; */
+}
+
+.cube img {
+    width: 250px;
+    height: 250px;
+    margin-top: -600px;
+    margin-right: 700px;
+}
+
+/* Define the scroll-based animation */
+@keyframes cubeAnimation {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(200px); /* Moves the element down */
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Apply the animation */
+.cube {
+    animation: cubeAnimation 20s ease-in-out infinite;
+}
+
+.content {
+    height: 2000px; /* Ensures enough content for scrolling */
+    background: #1C1C1C;
+}
 .box-image {
     display: flex;
     justify-content: end;
@@ -296,32 +532,67 @@ img {
         width: 314px;
         height: 337px;
         margin-bottom: 600px;
-        z-index: 1;
+        z-index: 10;
     }
 }
 
 .third-glass-box {
     width: 80%;
     height: 550px;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
     border-radius: 40px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 20px;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     border: 3px solid rgba(255, 255, 255, 0.18);
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 
 }
+.bat {
+    position: -webkit-sticky; /* For Safari */
+    position: sticky;
+    top: 50px; /* Adjust based on your layout */
+    /* z-index: 10; */
+}
 
+.bat img {
+    width: 250px;
+    height: 250px;
+    margin-top: -150px;
+    margin-left: 700px;
+}
+
+/* Define the scroll-based animation */
+@keyframes batAnimation {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(200px); /* Moves the element down */
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Apply the animation */
+.bat {
+    animation: batAnimation 20s ease-in-out infinite;
+}
+
+.content {
+    height: 2000px; /* Ensures enough content for scrolling */
+    background: #1C1C1C;
+}
 .line-animation {
     display: flex;
     flex-direction: row;
     overflow: hidden;
     white-space: nowrap;
-    margin-top: 180px;
+    margin-top: 120px;
 }
 
 .line-images {
@@ -365,7 +636,7 @@ img {
     flex-direction: column;
     align-items: center;
     position: relative;
-    margin-top: 350px;
+    margin-top: 200px;
 }
 
 .box-2-image {
@@ -379,7 +650,7 @@ img {
         width: 200px;
         height: 150px;
         margin-bottom: 723px;
-        z-index: 1;
+        z-index: 10;
     }
 
     .men-image {
